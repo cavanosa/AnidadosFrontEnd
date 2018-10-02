@@ -1,0 +1,18 @@
+<div>
+  <label>Marca: </label>
+  <select [(ngModel)]="marcaElegida">
+    <option [ngValue]="null">Elige marca</option>
+    <option *ngFor="let coche of coches" [ngValue]="coche">
+      {{coche.nombre}}
+    </option>
+  </select>
+</div>
+<br>
+<br>
+<div *ngIf="marcaElegida">
+  <label>Modelo: </label>
+  <select>
+    <option [ngValue]="null">Elige modelo</option>
+    <option *ngFor="let mod of marcaElegida.modelos">{{mod.nombre}}</option>
+  </select>
+</div>
